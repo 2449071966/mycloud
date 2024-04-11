@@ -1,0 +1,9 @@
+a.程序结尾处加
+getchar();一个不行（比如前面有scanf之类的函数使用，就会在缓冲区读取字符，结果还是会自动关闭）就加俩，俩不行就……
+b.先清除缓冲区，再getchar();
+while(getchar()!='\n')  //这两句代码是清空输入缓冲区内容，等同于fflush(stdin);
+  continue;
+getchar();
+c.方法A中的原理一样，只不过改成了在程序本身执行。
+#include <stdlib.h>
+system("pause");
